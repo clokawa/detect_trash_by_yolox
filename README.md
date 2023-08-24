@@ -57,9 +57,9 @@ JupyterLab 2.2.9
 
 Jetpack 4.5の時、l4t-ml:r32.5.0-py3
 dockerファイルをpull
-sudo docker pull nvcr.io/nvidia/l4t-ml:r35.2.1-py3
+$ sudo docker pull nvcr.io/nvidia/l4t-ml:r35.2.1-py3
 Docker ファイルをrun
-sudo docker run -it --rm --runtime nvidia --network host nvcr.io/nvidia/l4t-ml:r32.7.1-py3
+$ sudo docker run -it --rm --runtime nvidia --network host nvcr.io/nvidia/l4t-ml:r32.7.1-py3
 #Dockerにボリュームを構築する。
 $ docker volume create test_volume
 $ docker volume ls
@@ -67,27 +67,27 @@ $ docker volume ls
 $ docker run -it --name l4t-ml_vol --mount type=volume,src=test_volume,target=/home --runtime nvidia --network host nvcr.io/nvidia/l4t-ml:r32.7.1-py3
 
 
-Apt-get update
+$ apt-get update
 
-Apt-get install vim 
+$ apt-get install vim 
 
 # -*- coding:utf-8 -*-を最初に入れる。
 
-sudo apt install python3-pip
+$ sudo apt install python3-pip
 
-Pip3 install xmltodict
+$ pip3 install xmltodict
 
-Pip3 install keras==2.2.4
+$ pip3 install keras==2.2.4
 
-Pip3 install tqdm==4.11.2
+$ pip3 install tqdm==4.11.2
 
 ## 文字化けは以下のコマンドをdocker で入力する。
-export LANG=C.UTF-8
-export LANGUAGE=en_US:
+$ export LANG=C.UTF-8
+$ export LANGUAGE=en_US:
 
 ## convert_coco_to_voc.pyのfilenameからsplitを取り除く。
 ## Workフォルダを作成して、作業はその中でのみ行う。
-Mkdir ~/work
+$ mkdir ~/work
 
 
 
