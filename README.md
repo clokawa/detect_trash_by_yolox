@@ -2,31 +2,31 @@
 detect trash AI by yolox on jetson nano
 
 #スワップメモリの設定
-#make swapfile
+## make swapfile
 $ sudo dd if=/dev/zero of=/var/swapfile bs=1G count=4
-#initialize swapfile
-$sudo mkswap /var/swapfile
-$sudo chmod 600 /var/swapfile
-#mount swap when Jetson run
-#write in last row
+## initialize swapfile
+$ sudo mkswap /var/swapfile
+$ sudo chmod 600 /var/swapfile
+## mount swap when Jetson run
+## write in last row
 $sudo vi /etc/fstab
 -------------------------
 /var/swapfile          none        swap          swap       0 0
 -------------------------
-#activate swapfile
+## activate swapfile
 $ sudo swap on /var/swapfile
-#confirm swap
+## confirm swap
 $ free -m
 $ swap on -s
 
-#jtopのインストール
+## jtopのインストール
 $ sudo apt install python-pip
 $ sudo -H pip install -U jetson-stats
 $ sudo reboot
-#jtop run
+## jtop run
 $ jtop
 
-#install termal monitor
+## install termal monitor
 $ sudo apt install python3-pip
 $ sudo apt install libfreetype6-dev
 $ sudo apt install python3-numpy
@@ -82,21 +82,21 @@ Pip3 install keras==2.2.4
 
 Pip3 install tqdm==4.11.2
 
-文字化けは以下のコマンドをdocker で入力する。
+## 文字化けは以下のコマンドをdocker で入力する。
 export LANG=C.UTF-8
 export LANGUAGE=en_US:
 
-convert_coco_to_voc.pyのfilenameからsplitを取り除く。
-Workフォルダを作成して、作業はその中でのみ行う。
+## convert_coco_to_voc.pyのfilenameからsplitを取り除く。
+## Workフォルダを作成して、作業はその中でのみ行う。
 Mkdir ~/work
 
 
 
-Deviceにラズパイカメラを起動時に入れる必要あり？
+### Deviceにラズパイカメラを起動時に入れる必要あり？
 
 
-convert_coco_to_vocの198行目を'filename':filenameに変更する。
-voc_annotation.pyのイカを変える。
-123行目をimage_pathに帰る。
-以下のコマンドで拡張子JPGをjpgに変更する。
-find /path/to/your/folder/ -type f -name "*.JPG" -exec sh -c 'mv "$0" "${0%.JPG}.jpg"' {} \;
+## convert_coco_to_vocの198行目を'filename':filenameに変更する。
+## voc_annotation.pyのイカを変える。
+## 123行目をimage_pathに帰る。
+## 以下のコマンドで拡張子JPGをjpgに変更する。
+$ find /path/to/your/folder/ -type f -name "*.JPG" -exec sh -c 'mv "$0" "${0%.JPG}.jpg"' {} \;
