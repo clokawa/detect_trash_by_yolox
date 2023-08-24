@@ -8,12 +8,10 @@ $ sudo dd if=/dev/zero of=/var/swapfile bs=1G count=4
 ## initialize swapfile
 $ sudo mkswap /var/swapfile
 $ sudo chmod 600 /var/swapfile
-## mount swap when Jetson run
-## write in last row
+## mount swap when Jetson run.write in last row
 $ sudo vi /etc/fstab
--------------------------
-/var/swapfile          none        swap          swap       0 0
--------------------------
+"/var/swapfile          none        swap          swap       0 0"
+
 ## activate swapfile
 $ sudo swap on /var/swapfile
 ## confirm swap
