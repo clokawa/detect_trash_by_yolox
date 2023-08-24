@@ -2,6 +2,7 @@
 detect trash AI by yolox on jetson nano
 
 #スワップメモリの設定
+
 ## make swapfile
 $ sudo dd if=/dev/zero of=/var/swapfile bs=1G count=4
 ## initialize swapfile
@@ -9,7 +10,7 @@ $ sudo mkswap /var/swapfile
 $ sudo chmod 600 /var/swapfile
 ## mount swap when Jetson run
 ## write in last row
-$sudo vi /etc/fstab
+$ sudo vi /etc/fstab
 -------------------------
 /var/swapfile          none        swap          swap       0 0
 -------------------------
