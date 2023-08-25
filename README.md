@@ -7,21 +7,27 @@ detect trash AI by yolox on jetson nano
 $ sudo dd if=/dev/zero of=/var/swapfile bs=1G count=4
 ## initialize swapfile
 $ sudo mkswap /var/swapfile
+
 $ sudo chmod 600 /var/swapfile
 ## mount swap when Jetson run.write in last row
 $ sudo vi /etc/fstab
+
 "/var/swapfile          none        swap          swap       0 0"
 
 ## activate swapfile
 $ sudo swap on /var/swapfile
 ## confirm swap
 $ free -m
+
 $ swap on -s
 
 ## jtopのインストール
 $ sudo apt install python-pip
+
 $ sudo -H pip install -U jetson-stats
+
 $ sudo reboot
+
 ## jtop run
 $ jtop
 
@@ -36,6 +42,7 @@ $ sudo apt install python3-matplotlib
 
 # download Jetson-thermal-monitor tool from GitHub
 $ git clone https://github.com/tsutof/jetson-thermal-monitor
+
 # run tool
 $ cd jetson-thermal-monitor
 
@@ -63,14 +70,14 @@ JupyterLab 2.2.9
 Jetpack 4.5の時、l4t-ml:r32.5.0-py3
 dockerファイルをpull
 $ sudo docker pull nvcr.io/nvidia/l4t-ml:r35.2.1-py3
-Docker ファイルをrun
+### Docker ファイルをrun
 $ sudo docker run -it --rm --runtime nvidia --network host nvcr.io/nvidia/l4t-ml:r32.7.1-py3
 #Dockerにボリュームを構築する。
 $ docker volume create test_volume
+
 $ docker volume ls
 #Dockerをボリュームをマウントして、起動する。
 $ docker run -it --name l4t-ml_vol --mount type=volume,src=test_volume,target=/home --runtime nvidia --network host nvcr.io/nvidia/l4t-ml:r32.7.1-py3
-
 
 $ apt-get update
 
@@ -88,6 +95,7 @@ $ pip3 install tqdm==4.11.2
 
 ## 文字化けは以下のコマンドをdocker で入力する。
 $ export LANG=C.UTF-8
+
 $ export LANGUAGE=en_US:
 
 ## convert_coco_to_voc.pyのfilenameからsplitを取り除く。
