@@ -71,12 +71,17 @@ Jetpack 4.5の時、l4t-ml:r32.5.0-py3
 dockerファイルをpull
 $ sudo docker pull nvcr.io/nvidia/l4t-ml:r35.2.1-py3
 ### Docker ファイルをrun
+
 $ sudo docker run -it --rm --runtime nvidia --network host nvcr.io/nvidia/l4t-ml:r32.7.1-py3
+
 #Dockerにボリュームを構築する。
+
 $ docker volume create test_volume
 
 $ docker volume ls
+
 #Dockerをボリュームをマウントして、起動する。
+
 $ docker run -it --name l4t-ml_vol --mount type=volume,src=test_volume,target=/home --runtime nvidia --network host nvcr.io/nvidia/l4t-ml:r32.7.1-py3
 
 $ apt-get update
