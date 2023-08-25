@@ -84,6 +84,16 @@ $ docker volume ls
 
 $ docker run -it --name l4t-ml_vol --mount type=volume,src=test_volume,target=/home --runtime nvidia --network host nvcr.io/nvidia/l4t-ml:r32.7.1-py3
 
+# Dockerを停止する。 
+
+$ sudo docker stop l4t-ml_vol
+# Dockerを再起動する。 
+
+$ sudo docker restart l4t-ml_vol
+
+# Dockerに接続をする。
+$ docker attach l4t-ml_vol
+
 $ apt-get update
 
 $ apt-get install vim 
