@@ -31,7 +31,7 @@ $ sudo apt install libfreetype6-dev
 $ sudo apt install python3-numpy
 $ sudo apt install python3-matplotlib
 # download Jetson-thermal-monitor tool from GitHub
-$git clone https://github.com/tsutof/jetson-thermal-monitor
+$ git clone https://github.com/tsutof/jetson-thermal-monitor
 # run tool
 $ cd jetson-thermal-monitor
 $ python3 jetson-temp-monitor.py
