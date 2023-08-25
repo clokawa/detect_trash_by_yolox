@@ -121,7 +121,8 @@ $ mkdir ~/work
 
 ### Deviceにラズパイカメラを起動時に入れる必要あり？
 
-
+### 参照URL
+https://qiita.com/shimakon/items/6643ff07d52e84dd0676
 ## convert_coco_to_vocの198行目を'filename':filenameに変更する。
 ## voc_annotation.pyのイカを変える。
 ## 123行目をimage_pathに帰る。
