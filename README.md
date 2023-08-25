@@ -74,13 +74,13 @@ $ sudo docker pull nvcr.io/nvidia/l4t-ml:r35.2.1-py3
 
 $ sudo docker run -it --rm --runtime nvidia --network host nvcr.io/nvidia/l4t-ml:r32.7.1-py3
 
-#Dockerにボリュームを構築する。
+# Dockerにボリュームを構築する。
 
 $ docker volume create test_volume
 
 $ docker volume ls
 
-#Dockerをボリュームをマウントして、起動する。
+# Dockerをボリュームをマウントして、起動する。
 
 $ docker run -it --name l4t-ml_vol --mount type=volume,src=test_volume,target=/home --runtime nvidia --network host nvcr.io/nvidia/l4t-ml:r32.7.1-py3
 
